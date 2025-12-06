@@ -36,11 +36,13 @@ def merge_generate_bills_support_oppose_count_with_main_sponsor(
     logger.info('function merge_generate_bills_support_oppose_count_with_main_sponsor initiated')
 
     merged_df = pd.merge(vote_results_df, votes_df, how='left', left_on='vote_id', right_on='id')
+
     merged_df = pd.merge(merged_df, bills_df, how='left', left_on='bill_id', right_on='id')
     merged_df = merged_df.rename(columns={'title' : 'bill_name'})
 
     merged_df = pd.merge(merged_df, legislators_df, how='left', left_on='sponsor_id', right_on='id')
     merged_df = merged_df.rename(columns={'name' : 'sponsor_name'})
+
     merged_df['sponsor_name'] = merged_df['sponsor_name'].fillna('No Sponsor')
 
     merged_df = merged_df[['bill_name', 'sponsor_name', 'legislator_id', 'vote_type']]
