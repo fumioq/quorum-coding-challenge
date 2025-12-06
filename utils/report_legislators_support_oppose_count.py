@@ -17,7 +17,7 @@ def generate_legislators_support_oppose_count(
         legislators_df = databases['legislators_df'],
     )
 
-    # Make sure that we aren't duplicating or removing votes by accident.
+    # Making sure that we aren't duplicating or removing votes by accident.
     if len(databases['vote_results_df']) != len(merged_df):
         raise InconsistentData('Votes duplicated or deleted by error. Check implementation.')
 
