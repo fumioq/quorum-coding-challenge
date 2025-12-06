@@ -52,3 +52,6 @@ You will be provided with a list of legislators, bills, votes, and vote results 
 # Future features
 
 - download data directly from the web. Data is publicly available, so making requests to the data directly will make maintainability of this code better.
+- data quality check (cehck for duplicates or missing data).
+- if data valume is considerable, implement parallel processing with threads.
+  - if data is greater than 2GB, consider using Big Data tools like spark.

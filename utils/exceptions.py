@@ -1,0 +1,3 @@
+
+class EmptyData(Exception):
+    pass
