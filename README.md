@@ -13,6 +13,10 @@ You will be provided with a list of legislators, bills, votes, and vote results 
 
 ![ER-Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/quorum-er-model.jpeg)
 
+## Solution Model
+
+![Solution Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/solution-model.jpeg)
+
 # How to use
 
 ## Prepare your environment
