@@ -7,6 +7,7 @@ logger = logging.getLogger('report_bills_support_oppose_count_with_main_sponsor'
 def generate_bills_support_oppose_count_with_main_sponsor(
         databases: Dict[str, pd.DataFrame],
 ) -> None:
+    return
     merged_df = merge_generate_bills_support_oppose_count_with_main_sponsor(
         vote_results_df = databases['vote_results_df'],
         votes_df = databases['votes_df'],

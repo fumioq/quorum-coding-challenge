@@ -9,6 +9,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s [%(leveln
 logger = logging.getLogger('main')
 
 def main():
+    logger.info('Loading data. ')
+
     try:
         databases = {
             "bills_df" : get_bills_data(),
@@ -24,6 +26,7 @@ def main():
         logger.error(f'Error loading data: {e}')
         return
     
+    logger.info('Data loaded successfully.')
     # future feature: Check if folder "outputs" exists and create if it doens't.
     try:
         generate_legislators_support_oppose_count(databases)
