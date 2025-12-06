@@ -16,6 +16,7 @@ def generate_legislators_support_oppose_count(
     aggregated_df = aggregate_generate_legislators_support_oppose_count(merged_df)
     aggregated_df.to_csv('outputs/legislators-support-oppose-count.csv')
 
+
 def merge_generate_legislators_support_oppose_count(
     vote_results_df : pd.DataFrame,
     votes_df : pd.DataFrame,

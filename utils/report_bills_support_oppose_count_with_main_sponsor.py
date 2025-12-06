@@ -16,6 +16,7 @@ def generate_bills_support_oppose_count_with_main_sponsor(
     aggregated_df = aggregate_generate_bills_support_oppose_count_with_main_sponsor(merged_df)
     aggregated_df.to_csv('outputs/bills-support-oppose-count-with-main-sponsor.csv')
 
+
 def merge_generate_bills_support_oppose_count_with_main_sponsor(
     vote_results_df : pd.DataFrame,
     votes_df : pd.DataFrame,

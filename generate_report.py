@@ -27,5 +27,4 @@ def main():
     generate_legislators_support_oppose_count(databases)
     generate_bills_support_oppose_count_with_main_sponsor(databases)
 
-if __name__ == "__generate_report__":
-    main()
+main()
