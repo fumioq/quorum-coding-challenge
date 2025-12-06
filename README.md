@@ -19,3 +19,36 @@ You will be provided with a list of legislators, bills, votes, and vote results 
 ## ER-Model
 
 ![ER-Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/quorum-er-model.jpeg)
+
+# How to use
+
+## Prepare your environment
+
+- Make sure you have git and python installed. Install Miniconda or pyvenv as well.
+- Clone repository:
+  - Open terminal and run the command below
+  - git clone https://github.com/fumioq/quorum-coding-challenge.git
+- Make the new "quorum-coding-challenge" as current directory using:
+  - cd quorum-coding-challenge/
+- Create a new environment. Here, I'm using miniconda and setting the python version to 3.12, but you could also create a new environment with pyvenv.
+  - conda create -n quorum python=3.12 -y
+- Activate your environment (follow the steps to activate it according to your environment miniconda / pyvenv).
+- Install dependencies. Using uv to make the installation faster. It is also great to reduce image build time on future CICD pipelines.
+  - pip install uv
+  - pip uv pip install -r requirements.txt
+
+## How to run
+
+- Make sure that your current directory is "quorum-coding-challenge"
+- Run on your terminal
+  - python generate_report.py
+
+## Outputs
+
+- Outputs are generated inside the "reports" folder
+  - legislators-support-oppose-count.csv - All legislators' supported and opposed bills count.
+  - bills-support-oppose-count-with-main-sponsor.csv - Bills with sponsors and number of legislators that opposed and supported them.
+
+# Future features
+
+- download data directly from the web. Data is publicly available, so making requests to the data directly will make maintainability of this code better.
