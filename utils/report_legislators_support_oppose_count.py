@@ -2,6 +2,7 @@ import pandas as pd
 import logging
 from typing import Dict
 from utils.database import VOTE_LABELS_DICT
+from utils.exceptions import InconsistentData
 
 logger = logging.getLogger('report_legislators_support_oppose_count')
 
@@ -14,6 +15,11 @@ def generate_legislators_support_oppose_count(
         votes_df = databases['votes_df'],
         legislators_df = databases['legislators_df'],
     )
+
+    # Make sure that we aren't duplicating or removing votes by accident.
+    if len(databases['vote_results_df']) == len(merged_df):
+        raise InconsistentData('Votes duplicated or deleted by error. Check implementation.')
+
     aggregated_df = aggregate_generate_legislators_support_oppose_count(merged_df)
     aggregated_df.to_csv('outputs/legislators-support-oppose-count.csv')
 
