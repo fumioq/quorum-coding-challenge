@@ -1,6 +1,7 @@
 import pandas as pd
 import logging
 from typing import Dict
+from utils.database import VOTE_LABELS_DICT
 
 logger = logging.getLogger('report_legislators_support_oppose_count')
 
@@ -22,10 +23,18 @@ def merge_generate_legislators_support_oppose_count(
     votes_df : pd.DataFrame,
     legislators_df : pd.DataFrame,
 ) -> pd.DataFrame:
-    pass
+    merged_df = pd.merge(vote_results_df, legislators_df, how='left', left_on='legislator_id', right_on='id')
+    merged_df = merged_df.rename(columns={'name' : 'legislator_name'})
+    merged_df = merged_df[['legislator_name', 'vote_type', 'vote_id']]
 
+    merged_df = pd.merge(merged_df, votes_df, how='left', left_on='vote_id', right_on='id')
+    merged_df = merged_df[['legislator_name', 'vote_type', 'bill_id']]
+
+    merged_df['vote_type'] = merged_df['vote_type'].replace(VOTE_LABELS_DICT)
+
+    return merged_df
 
 def aggregate_generate_legislators_support_oppose_count(
     merged_df : pd.DataFrame,
 ) -> pd.DataFrame:
-    pass
+    return merged_df.pivot_table(index='legislator_name', columns='vote_type', values='bill_id', aggfunc='count')

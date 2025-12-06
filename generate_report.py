@@ -23,6 +23,8 @@ def main():
     except Exception as e:
         logger.error(f'Error loading data: {e}')
         return
+    
+    # future feature: Check if folder "outputs" exists and create if it doens't.
 
     generate_legislators_support_oppose_count(databases)
     generate_bills_support_oppose_count_with_main_sponsor(databases)
