@@ -17,3 +17,5 @@ You will be provided with a list of legislators, bills, votes, and vote results 
 4. How long did you spend working on the assignment?
 
 ## ER-Model
+
+[ER-Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/quorum-er-model.jpeg)
