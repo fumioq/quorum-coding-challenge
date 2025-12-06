@@ -18,4 +18,4 @@ You will be provided with a list of legislators, bills, votes, and vote results 
 
 ## ER-Model
 
-[ER-Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/quorum-er-model.jpeg)
+![ER-Model](https://raw.githubusercontent.com/fumioq/quorum-coding-challenge/refs/heads/main/images/quorum-er-model.jpeg)
