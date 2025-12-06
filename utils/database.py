@@ -13,14 +13,18 @@ def try_to_load_data(data_load_function: Callable) -> pd.DataFrame:
             raise EmptyData(f'{data_load_function.__name__} empty result.')
     return wrap
 
+@try_to_load_data
 def get_bills_data() -> pd.DataFrame:
     pass
 
+@try_to_load_data
 def get_legislators_data() -> pd.DataFrame:
     pass
 
+@try_to_load_data
 def get_votes_data() -> pd.DataFrame:
     pass
 
+@try_to_load_data
 def get_vote_results_data() -> pd.DataFrame:
     pass
